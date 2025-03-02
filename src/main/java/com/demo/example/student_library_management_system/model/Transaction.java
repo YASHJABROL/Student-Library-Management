@@ -24,6 +24,13 @@ public class Transaction {
     @Column(name = "fine",nullable = false)
     private double fine;
 
+    @JoinColumn
+    @ManyToOne
+    private Book book;
+    @JoinColumn
+    @ManyToOne
+    private Card card;
+
     public int getId() {
         return id;
     }
@@ -62,5 +69,21 @@ public class Transaction {
 
     public void setFine(double fine) {
         this.fine = fine;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public Card getCard() {
+        return card;
+    }
+
+    public void setCard(Card card) {
+        this.card = card;
     }
 }
